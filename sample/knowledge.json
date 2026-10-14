@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 2,
+  "title": "KMS 확장 지식",
+  "generatedAt": "2026-09-08T00:00:00Z",
+  "items": [
+    {"id": "doc-annual-policy", "title": "연차 규정", "kind": "document", "subtype": "규정", "description": "연차 발생과 사용 기준", "owner": "인사팀", "department": "인사팀", "domain": "인사", "tags": ["연차", "규정"]},
+    {"id": "doc-manual", "title": "연차 계산 매뉴얼", "kind": "document", "subtype": "매뉴얼", "description": "계산기 사용 방법", "owner": "인사팀", "department": "인사팀", "domain": "인사", "tags": ["연차"]},
+    {"id": "ai-annual-prompt", "title": "연차 계산 프롬프트 자산", "kind": "ai_asset", "subtype": "프롬프트", "description": "검토된 계산 안내 프롬프트", "owner": "인사팀", "department": "인사팀", "domain": "인사", "tags": ["연차", "AI"], "prompt": "연차 계산 규정을 근거로 안내한다."},
+    {"id": "tool-dashboard", "title": "인사 현황 대시보드", "kind": "tool", "subtype": "dashboard", "description": "인사 지표 대시보드", "owner": "인사팀", "department": "인사팀", "domain": "인사", "tags": ["대시보드"], "url": "https://apps.example.com/hr-dashboard"}
+  ],
+  "relations": [
+    {"id": "rel-manual-policy", "source": "doc-manual", "target": "doc-annual-policy", "type": "explains", "label": "해설"},
+    {"id": "rel-prompt-manual", "source": "ai-annual-prompt", "target": "doc-manual", "type": "based_on", "label": "근거"},
+    {"id": "rel-dashboard-policy", "source": "tool-dashboard", "target": "doc-annual-policy", "type": "references", "label": "참조"}
+  ]
+}

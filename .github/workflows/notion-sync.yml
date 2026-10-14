@@ -1,0 +1,75 @@
+name: Manual Notion sync and deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: optional-notion-deploy
+  cancel-in-progress: false
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      NOTION_SOURCES_JSON: ${{ secrets.NOTION_SOURCES_JSON }}
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+      ACCESS_APP_ID: ${{ vars.ACCESS_APP_ID }}
+      ACCESS_AUD: ${{ vars.ACCESS_AUD }}
+      ACCESS_TEAM_DOMAIN: ${{ vars.ACCESS_TEAM_DOMAIN }}
+      ALLOWED_EMAIL_DOMAIN: ${{ vars.ALLOWED_EMAIL_DOMAIN }}
+      KMS_HOSTNAME: ${{ vars.KMS_HOSTNAME }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require explicit deployment configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in NOTION_TOKEN NOTION_SOURCES_JSON CF_API_TOKEN CF_ACCOUNT_ID ACCESS_APP_ID ACCESS_AUD ACCESS_TEAM_DOMAIN ALLOWED_EMAIL_DOMAIN KMS_HOSTNAME; do
+            if [[ -z "${!name:-}" ]]; then echo "Missing deployment setting: $name"; exit 1; fi
+          done
+          if [[ "$KMS_HOSTNAME" == *.example.com || "$ALLOWED_EMAIL_DOMAIN" == example.com ]]; then
+            echo 'Replace example settings before deployment'; exit 1
+          fi
+          printf '%s' "$NOTION_SOURCES_JSON" > "$RUNNER_TEMP/notion-sources.json"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify Access and publish destination
+        run: python scripts/check_access_app.py
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          npm ci
+          npm --prefix frontend ci
+      - name: Validate sync and access guard
+        run: |
+          python -m unittest scripts/test_sync_notion.py scripts/test_check_access_app.py
+          npm test
+      - name: Build static frontend
+        run: npm --prefix frontend run build
+      - name: Fetch Notion sources
+        run: python scripts/sync_notion.py --sources "$RUNNER_TEMP/notion-sources.json" --out out
+      - name: Validate publication
+        run: node scripts/check-publish.mjs --out out
+      - name: Deploy gated Worker
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx wrangler versions upload \
+            --var "ACCESS_TEAM_DOMAIN:$ACCESS_TEAM_DOMAIN" "ACCESS_AUD:$ACCESS_AUD" "ALLOWED_EMAIL_DOMAIN:$ALLOWED_EMAIL_DOMAIN" \
+            | tee "$RUNNER_TEMP/kms-upload.log"
+          version_id=$(sed -nE 's/.*Worker Version ID: ([0-9a-f-]{36}).*/\1/p' "$RUNNER_TEMP/kms-upload.log")
+          [[ "$version_id" =~ ^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$ ]]
+          npx wrangler versions deploy "$version_id@100" --yes

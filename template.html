@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KMS Graph 빌드 필요</title>
+  <style>
+    :root{font-family:system-ui,sans-serif;color-scheme:light dark}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f4ef;color:#252924}.card{width:min(560px,calc(100% - 40px));padding:32px;border:1px solid #deded6;border-radius:16px;background:#fbfaf7;box-shadow:0 16px 44px #23282217}h1{font-size:24px}p{line-height:1.7;color:#666d66}code{display:block;padding:12px 14px;border-radius:8px;background:#ecece7;overflow:auto;color:#244f40}@media(prefers-color-scheme:dark){body{background:#161a17;color:#e6e9e3}.card{background:#1d221e;border-color:#343b35}p{color:#a2aaa2}code{background:#282e29;color:#8bd0b3}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p>KMS GRAPH</p>
+    <h1>프런트엔드 빌드가 필요합니다.</h1>
+    <p>게시 자료는 포함됐지만 탐색 화면이 아직 빌드되지 않았습니다. 저장소 루트에서 다음 명령을 실행한 뒤 사이트를 다시 생성하세요.</p>
+    <code>npm --prefix frontend ci<br>npm --prefix frontend run build<br>python build.py --csv-dir sample --out out --no-check-urls</code>
+  </main>
+  <script id="kms-data" type="application/json">/*__KMS_DATA__*/</script>
+</body>
+</html>

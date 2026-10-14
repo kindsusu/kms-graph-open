@@ -1,0 +1,16 @@
+{
+  "source": "sheets",
+  "sheet_id": "",
+  "service_account_json": "C:/path/key.json",
+  "notion_token": "",
+  "notion_db_sites": "",
+  "notion_db_data": "",
+  "mappings_file": "mappings.json",
+  "knowledge_file": "",
+  "check_urls": true,
+  "repo_dir": "C:/path/kms-pages",
+  "out_subdir": "out",
+  "page_url": "https://kms.example.com",
+  "teams_webhook": "",
+  "site_title": "KMS"
+}

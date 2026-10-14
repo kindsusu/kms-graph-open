@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">KMS Graph</title>
+  <desc id="desc">Domain-centered knowledge graph in a GitHub-style dark theme</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D1117"/><stop offset="1" stop-color="#101722"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#8B949E" opacity=".10"/>
+    </pattern>
+    <filter id="lift" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#010409" flood-opacity=".42"/>
+    </filter>
+    <style>
+      .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif}
+      .mono{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}
+      .edge{fill:none;stroke:#6E7681;stroke-width:1.35;stroke-linecap:round;opacity:.72}
+      .cross{fill:none;stroke:#58A6FF;stroke-width:1.4;stroke-dasharray:4 5;opacity:.72}
+      .site{stroke-width:1.8}
+      .data{fill:#21262D;stroke:#8C959F;stroke-width:1.4}
+      .group{fill:#161B22;fill-opacity:.62;stroke-width:1;stroke-dasharray:5 5}
+      .group-label{font-size:10px;font-weight:650;letter-spacing:1.15px}
+    </style>
+  </defs>
+
+  <rect width="1200" height="420" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="420" rx="24" fill="url(#dots)"/>
+
+  <!-- Brand block -->
+  <g transform="translate(62 54)">
+    <g class="mono" fill="#8B949E" font-size="13">
+      <circle cx="7" cy="8" r="3" fill="#3FB950"/>
+      <text x="20" y="13">KMS Graph / example project</text>
+      <rect x="196" y="-3" width="54" height="22" rx="11" fill="#238636" fill-opacity=".14" stroke="#2EA043"/>
+      <text x="211" y="12" fill="#56D364" font-size="10">PUBLIC</text>
+    </g>
+
+    <!-- New mark: intentionally not derived from the existing logo -->
+    <g transform="translate(0 72)" filter="url(#lift)">
+      <rect width="82" height="82" rx="18" fill="#161B22" stroke="#30363D"/>
+      <path d="M22 57 36 26 59 39 48 62 22 57ZM59 39 68 21" fill="none" stroke="#58A6FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="22" cy="57" r="5" fill="#0D1117" stroke="#3FB950" stroke-width="2"/>
+      <path d="M36 20 42 26 36 32 30 26Z" fill="#0D1117" stroke="#BC8CFF" stroke-width="2"/>
+      <rect x="54" y="34" width="10" height="10" rx="2" fill="#0D1117" stroke="#D29922" stroke-width="2"/>
+      <circle cx="48" cy="62" r="5" fill="#0D1117" stroke="#58A6FF" stroke-width="2"/>
+      <circle cx="68" cy="21" r="4" fill="#F0F6FC"/>
+    </g>
+
+    <g class="sans" transform="translate(0 184)">
+      <text y="0" fill="#F0F6FC" font-size="48" font-weight="760" letter-spacing="-2">KMS GRAPH</text>
+      <text y="39" fill="#C9D1D9" font-size="18" font-weight="500">Knowledge, organized by domain.</text>
+      <text y="69" fill="#8B949E" font-size="15">Discover relationships. Share context. Keep growing.</text>
+    </g>
+
+    <g class="mono" transform="translate(0 290)" font-size="11">
+      <rect width="102" height="27" rx="13.5" fill="#161B22" stroke="#30363D"/>
+      <path d="M17 7 23 13.5 17 20 11 13.5Z" fill="#BC8CFF"/>
+      <text x="31" y="18" fill="#C9D1D9">DOMAIN</text>
+      <rect x="112" width="82" height="27" rx="13.5" fill="#161B22" stroke="#30363D"/>
+      <circle cx="129" cy="13.5" r="5" fill="#58A6FF"/>
+      <text x="141" y="18" fill="#C9D1D9">SITE</text>
+      <rect x="204" width="82" height="27" rx="13.5" fill="#161B22" stroke="#30363D"/>
+      <rect x="220" y="8" width="11" height="11" rx="2" fill="#D29922"/>
+      <text x="241" y="18" fill="#C9D1D9">DATA</text>
+    </g>
+  </g>
+
+  <!-- Graph card -->
+  <g transform="translate(458 34)" filter="url(#lift)">
+    <rect width="694" height="352" rx="16" fill="#0D1117" stroke="#30363D"/>
+    <path d="M0 45H694" stroke="#30363D"/>
+    <circle cx="22" cy="22.5" r="4" fill="#F85149"/><circle cx="37" cy="22.5" r="4" fill="#D29922"/><circle cx="52" cy="22.5" r="4" fill="#3FB950"/>
+    <text class="mono" x="76" y="27" fill="#C9D1D9" font-size="12">knowledge.graph</text>
+    <rect x="580" y="12" width="92" height="22" rx="11" fill="#161B22" stroke="#30363D"/>
+    <circle cx="595" cy="23" r="3" fill="#3FB950"/>
+    <text class="mono" x="605" y="27" fill="#8B949E" font-size="10">EXPANDING</text>
+
+    <!-- Precise rectangular domain groups -->
+    <rect class="group" x="24" y="67" width="292" height="116" rx="10" stroke="#BC8CFF"/>
+    <rect class="group" x="378" y="67" width="292" height="116" rx="10" stroke="#58A6FF"/>
+    <rect class="group" x="24" y="213" width="292" height="116" rx="10" stroke="#3FB950"/>
+    <rect class="group" x="378" y="213" width="292" height="116" rx="10" stroke="#D29922"/>
+    <text class="mono group-label" x="40" y="86" fill="#BC8CFF">DOMAIN / PEOPLE</text>
+    <text class="mono group-label" x="394" y="86" fill="#58A6FF">DOMAIN / PRODUCT</text>
+    <text class="mono group-label" x="40" y="232" fill="#3FB950">DOMAIN / OPERATIONS</text>
+    <text class="mono group-label" x="394" y="232" fill="#D29922">DOMAIN / FINANCE</text>
+
+    <!-- Connections -->
+    <path class="edge" d="M164 124 90 108M164 124 104 158M164 124 225 102M164 124 251 153M90 108 60 148M104 158 60 148M225 102 282 132"/>
+    <path class="edge" d="M520 124 444 106M520 124 456 158M520 124 582 102M520 124 608 151M444 106 414 148M456 158 414 148M582 102 638 132"/>
+    <path class="edge" d="M164 270 90 252M164 270 105 307M164 270 226 248M164 270 252 302M90 252 60 294M105 307 60 294M226 248 282 278"/>
+    <path class="edge" d="M520 270 444 252M520 270 456 307M520 270 582 248M520 270 608 300M444 252 414 294M456 307 414 294M582 248 638 278"/>
+    <path class="cross" d="M282 132 344 198 414 148M282 278 344 198 414 294M251 153 344 198 456 158M252 302 344 198 444 252"/>
+
+    <!-- Shared knowledge node -->
+    <rect x="332" y="186" width="24" height="24" rx="5" fill="#F0F6FC" stroke="#58A6FF" stroke-width="2"/>
+    <circle cx="344" cy="198" r="3.5" fill="#0969DA"/>
+
+    <!-- People -->
+    <path d="M164 109 179 124 164 139 149 124Z" fill="#6E40C9" stroke="#BC8CFF" stroke-width="1.8"/>
+    <g class="site" fill="#161B22" stroke="#BC8CFF"><circle cx="90" cy="108" r="7"/><circle cx="104" cy="158" r="7"/><circle cx="225" cy="102" r="7"/><circle cx="251" cy="153" r="7"/></g>
+    <rect class="data" x="52" y="140" width="16" height="16" rx="2"/><rect class="data" x="274" y="124" width="16" height="16" rx="2"/>
+    <!-- Product -->
+    <path d="M520 109 535 124 520 139 505 124Z" fill="#0969DA" stroke="#58A6FF" stroke-width="1.8"/>
+    <g class="site" fill="#161B22" stroke="#58A6FF"><circle cx="444" cy="106" r="7"/><circle cx="456" cy="158" r="7"/><circle cx="582" cy="102" r="7"/><circle cx="608" cy="151" r="7"/></g>
+    <rect class="data" x="406" y="140" width="16" height="16" rx="2"/><rect class="data" x="630" y="124" width="16" height="16" rx="2"/>
+    <!-- Operations -->
+    <path d="M164 255 179 270 164 285 149 270Z" fill="#238636" stroke="#3FB950" stroke-width="1.8"/>
+    <g class="site" fill="#161B22" stroke="#3FB950"><circle cx="90" cy="252" r="7"/><circle cx="105" cy="307" r="7"/><circle cx="226" cy="248" r="7"/><circle cx="252" cy="302" r="7"/></g>
+    <rect class="data" x="52" y="286" width="16" height="16" rx="2"/><rect class="data" x="274" y="270" width="16" height="16" rx="2"/>
+    <!-- Finance -->
+    <path d="M520 255 535 270 520 285 505 270Z" fill="#9A6700" stroke="#D29922" stroke-width="1.8"/>
+    <g class="site" fill="#161B22" stroke="#D29922"><circle cx="444" cy="252" r="7"/><circle cx="456" cy="307" r="7"/><circle cx="582" cy="248" r="7"/><circle cx="608" cy="300" r="7"/></g>
+    <rect class="data" x="406" y="286" width="16" height="16" rx="2"/><rect class="data" x="630" y="270" width="16" height="16" rx="2"/>
+
+    <!-- Continued growth -->
+    <path class="cross" d="M638 132 675 108M638 278 675 304"/>
+    <circle cx="675" cy="108" r="6" fill="#0D1117" stroke="#58A6FF" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <circle cx="675" cy="304" r="6" fill="#0D1117" stroke="#D29922" stroke-width="1.5" stroke-dasharray="3 2"/>
+  </g>
+</svg>

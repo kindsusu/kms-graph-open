@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="KMS Graph">
+  <title>KMS Graph</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070B1F"/><stop offset="1" stop-color="#111C45"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#93C5FD" stop-opacity="0.9"/><stop offset="0.4" stop-color="#60A5FA" stop-opacity="0.25"/><stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.2"/></filter>
+    <style>
+      .t{font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Noto Sans KR","Malgun Gothic",Helvetica,Arial,sans-serif}
+      .lbl{font-size:13px;fill:#A5B4FC;letter-spacing:2px}
+    </style>
+  </defs>
+  <rect width="1200" height="400" rx="24" fill="url(#sky)"/>
+
+  <g fill="#FFFFFF" opacity="0.35" filter="url(#soft)">
+    <circle cx="40" cy="60" r="1"/><circle cx="130" cy="30" r="0.8"/><circle cx="260" cy="45" r="1.1"/><circle cx="380" cy="30" r="0.7"/>
+    <circle cx="470" cy="60" r="0.9"/><circle cx="600" cy="28" r="1"/><circle cx="720" cy="55" r="0.8"/><circle cx="850" cy="30" r="1"/>
+    <circle cx="980" cy="50" r="0.9"/><circle cx="1110" cy="35" r="0.7"/><circle cx="1160" cy="120" r="1"/><circle cx="1170" cy="260" r="0.8"/>
+    <circle cx="30" cy="180" r="1"/><circle cx="60" cy="300" r="0.7"/><circle cx="220" cy="370" r="0.9"/><circle cx="440" cy="378" r="0.8"/>
+    <circle cx="760" cy="372" r="0.8"/><circle cx="980" cy="368" r="0.7"/><circle cx="1130" cy="350" r="0.9"/><circle cx="20" cy="380" r="0.8"/>
+    <circle cx="300" cy="300" r="0.8"/><circle cx="900" cy="300" r="0.9"/><circle cx="560" cy="330" r="0.7"/><circle cx="1040" cy="200" r="0.8"/>
+  </g>
+
+  <g fill="none" stroke-width="1.2" stroke-linecap="round">
+    <g stroke="#818CF8" stroke-opacity="0.7">
+      <polyline points="110,150 165,105 225,130 200,190 110,150"/><line x1="225" y1="130" x2="280" y2="100"/>
+    </g>
+    <g stroke="#FB7185" stroke-opacity="0.7">
+      <polyline points="330,215 385,175 445,205 420,265"/><line x1="385" y1="175" x2="400" y2="120"/>
+    </g>
+    <g stroke="#FBBF24" stroke-opacity="0.7">
+      <polyline points="540,95 610,80 660,130 620,180 560,160 540,95"/>
+    </g>
+    <g stroke="#2DD4BF" stroke-opacity="0.7">
+      <polyline points="720,225 780,200 850,225 890,190"/><line x1="780" y1="200" x2="760" y2="120"/>
+    </g>
+    <g stroke="#38BDF8" stroke-opacity="0.7">
+      <polyline points="960,110 1020,85 1075,140 1040,195 975,175"/><line x1="975" y1="175" x2="890" y2="190"/>
+    </g>
+    <g stroke="#FFFFFF" stroke-opacity="0.18" stroke-dasharray="3 5">
+      <line x1="200" y1="190" x2="330" y2="215"/><line x1="280" y1="100" x2="400" y2="120"/><line x1="445" y1="205" x2="560" y2="160"/><line x1="660" y1="130" x2="760" y2="120"/>
+    </g>
+  </g>
+
+  <g fill="url(#halo)">
+    <circle cx="110" cy="150" r="14"/><circle cx="165" cy="105" r="11"/><circle cx="225" cy="130" r="11"/><circle cx="200" cy="190" r="12"/><circle cx="280" cy="100" r="9"/>
+    <circle cx="330" cy="215" r="11"/><circle cx="385" cy="175" r="14"/><circle cx="445" cy="205" r="10"/><circle cx="420" cy="265" r="9"/><circle cx="400" cy="120" r="9"/>
+    <circle cx="540" cy="95" r="11"/><circle cx="610" cy="80" r="10"/><circle cx="660" cy="130" r="16"/><circle cx="620" cy="180" r="10"/><circle cx="560" cy="160" r="9"/>
+    <circle cx="720" cy="225" r="10"/><circle cx="780" cy="200" r="13"/><circle cx="850" cy="225" r="10"/><circle cx="890" cy="190" r="12"/><circle cx="760" cy="120" r="9"/>
+    <circle cx="960" cy="110" r="10"/><circle cx="1020" cy="85" r="13"/><circle cx="1075" cy="140" r="10"/><circle cx="1040" cy="195" r="11"/><circle cx="975" cy="175" r="9"/>
+  </g>
+  <g fill="#FFFFFF">
+    <circle cx="110" cy="150" r="3.2"/><circle cx="165" cy="105" r="2.4"/><circle cx="225" cy="130" r="2.4"/><circle cx="200" cy="190" r="2.8"/><circle cx="280" cy="100" r="2"/>
+    <circle cx="330" cy="215" r="2.4"/><circle cx="385" cy="175" r="3.2"/><circle cx="445" cy="205" r="2.2"/><circle cx="420" cy="265" r="2"/><circle cx="400" cy="120" r="2"/>
+    <circle cx="540" cy="95" r="2.4"/><circle cx="610" cy="80" r="2.2"/><circle cx="660" cy="130" r="3.6"/><circle cx="620" cy="180" r="2.2"/><circle cx="560" cy="160" r="2"/>
+    <circle cx="720" cy="225" r="2.2"/><circle cx="780" cy="200" r="3"/><circle cx="850" cy="225" r="2.2"/><circle cx="890" cy="190" r="2.8"/><circle cx="760" cy="120" r="2"/>
+    <circle cx="960" cy="110" r="2.2"/><circle cx="1020" cy="85" r="3"/><circle cx="1075" cy="140" r="2.2"/><circle cx="1040" cy="195" r="2.4"/><circle cx="975" cy="175" r="2"/>
+  </g>
+
+  <g class="t lbl">
+    <text x="140" y="222">인사</text>
+    <text x="356" y="292">채용</text>
+    <text x="574" y="66">영업</text>
+    <text x="762" y="258">총무</text>
+    <text x="1004" y="230">경영</text>
+  </g>
+
+  <text class="t" x="600" y="342" text-anchor="middle" font-size="44" font-weight="800" fill="#F8FAFC" letter-spacing="-1">KMS Graph</text>
+</svg>

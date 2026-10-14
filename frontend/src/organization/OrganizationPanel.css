@@ -1,0 +1,15 @@
+.org-tree-row.active{background:var(--accent-soft)}
+.org-tree-row.dragging{opacity:.55}.drag-handle{cursor:grab}.drag-handle:active{cursor:grabbing}
+.org-tree-row.drop-target,.org-unfiled.drop-target{outline:1px solid var(--accent);background:var(--accent-soft)}
+.org-drop-hint{grid-column:2/-1;padding:0 4px 5px;color:var(--accent);font-size:9px}
+.org-drop-empty{padding:7px 8px;color:var(--muted);font-size:10px}
+.org-dialog p{font-size:12px;line-height:1.5;color:var(--muted)}
+.org-folder-project-list{margin:8px 0 18px}.org-folder-project-list .org-card-grid{margin-top:14px}
+.sidebar .organization-panel button,.sidebar .organization-panel label{display:inline-flex!important;grid-template-columns:none!important;align-items:center;justify-content:flex-start;width:auto!important;min-width:0;white-space:nowrap}
+.sidebar .organization-panel .org-tree-name{display:flex!important;width:100%!important;white-space:normal}
+.sidebar .organization-panel .drag-handle,.sidebar .organization-panel .org-row-action{display:grid!important;width:24px!important;justify-content:center}
+.sidebar .organization-panel .org-panel-head button{width:26px!important;justify-content:center}
+.sidebar .organization-panel .org-panel-footer{display:flex;align-items:center}.sidebar .organization-panel .org-panel-footer>button,.sidebar .organization-panel .org-panel-footer>label{width:auto!important;min-height:28px!important;white-space:nowrap}
+@media(min-width:901px){.sidebar .org-drawer-toggle{display:none!important}}
+@media(min-width:901px){.sidebar .organization-panel .org-close{display:none!important}}
+@media(max-width:900px){.sidebar .org-drawer-toggle{display:flex!important;width:auto!important;min-width:max-content!important;grid-template-columns:none!important;align-items:center;justify-content:center;white-space:nowrap}.sidebar .organization-panel .org-panel-head .nav-label{display:block!important;margin:0!important;font-size:12px!important;color:var(--text)!important}.sidebar .organization-panel .org-panel-footer{display:flex!important;flex-flow:row wrap!important;align-items:center}.sidebar .organization-panel .org-panel-footer>*{flex:0 0 auto!important}}

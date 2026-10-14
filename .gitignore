@@ -1,0 +1,12 @@
+out/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/*.tsbuildinfo
+.qa/
+__pycache__/
+config.json
+node_modules/
+.wrangler/
+.kms-state/
+.*-state/

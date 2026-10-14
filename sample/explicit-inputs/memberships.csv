@@ -1,0 +1,3 @@
+item_id,folder_id,project_id,approved
+policy-leave,folder-hr,project-policy,TRUE
+manual-leave,folder-hr,project-policy,TRUE

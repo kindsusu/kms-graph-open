@@ -1,0 +1,3 @@
+id,source,target,type,label,evidence,evidence_url,approved
+manual-policy,manual-leave,policy-leave,based_on,규정에 따른 신청,연차 운영 규정의 신청 절차,https://example.com/policies/leave,TRUE
+private-policy,private-draft,policy-leave,related,초안,,,FALSE

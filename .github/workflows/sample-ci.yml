@@ -1,0 +1,33 @@
+name: Sample build and tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: npm ci
+      - run: npm --prefix frontend ci
+      - run: npm test
+      - run: python -m unittest scripts/test_sync_notion.py scripts/test_check_access_app.py
+      - run: python test_build.py
+      - run: python test_knowledge.py
+      - run: npm --prefix frontend run typecheck
+      - run: npm --prefix frontend test
+      - run: npm run sample:build
+      - run: node scripts/check-publish.mjs --out out

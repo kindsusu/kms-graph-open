@@ -1,0 +1,4 @@
+id,title,kind,subtype,description,body,department,domain,tags,source_id,source_url,source_updated_at,approved
+policy-leave,연차 운영 규정,document,규정,연차 신청 원칙,신청 전에 담당자의 승인을 받습니다.,인사팀,인사,연차,page-leave,https://example.com/policies/leave,2026-10-01,TRUE
+manual-leave,연차 신청 매뉴얼,document,매뉴얼,신청 절차 안내,,인사팀,인사,연차,page-manual,https://example.com/manual/leave,2026-10-02,TRUE
+private-draft,미승인 초안,document,초안,게시하지 않는 예제,,,,,,,FALSE
